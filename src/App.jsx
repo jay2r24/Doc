@@ -3,7 +3,7 @@ import { Loader2 } from "lucide-react";
 import Header from "./components/Header";
 import FileUpload from "./components/FileUpload";
 import DocumentPreview from "./components/DocumentPreview";
-import UnifiedMiniMap from "./components/MiniMap";
+import MiddleScrollControl from "./components/MiddleScrollControl";
 import ComparisonSummary from "./components/ComparisonSummary";
 import DetailedReport from "./components/DetailedReport";
 import { compareHtmlDocuments } from "./utils/textComparison";
@@ -178,14 +178,14 @@ function App() {
             />
 
             {/* Document Comparison View */}
-            <div className="grid grid-cols-[1fr_80px_1fr] gap-4 items-stretch">
+            <div className="grid grid-cols-[1fr_120px_1fr] gap-4 items-stretch">
               <DocumentPreview
                 document={leftDocument}
                 diffs={comparison.leftDiffs}
                 title="Original Document"
                 containerId="left-preview-container"
               />
-              <UnifiedMiniMap
+              <MiddleScrollControl
                 leftContainerId="left-preview-container"
                 rightContainerId="right-preview-container"
               />
